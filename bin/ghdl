@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'github_downloader'
+
+begin
+  GithubDownloader.from_cmdline ARGV
+rescue => e
+  abort e.message
+end

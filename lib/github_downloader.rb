@@ -55,7 +55,7 @@ module GithubDownloader
     user_repo = options[:from]
 
     github = Github.new basic_auth: "#{user}:#{pass}" do |config|
-      config.org = organization
+      config.org = organization unless organization.blank?
       config.auto_pagination = true
     end
 
